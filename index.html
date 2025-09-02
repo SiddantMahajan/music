@@ -1,346 +1,463 @@
 <html>
-  <head>
-    <title>Home</title>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
-      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="container-fluid main">
-      <aside class="sidebar">
-        <div class="logo">
-          <img src="img/logo.jpg" alt="logo">
-        </div>
-        <ul class="links">
-          <h4>Main Menu</h4>
-          <li class="active">
-            <span class="material-symbols-rounded">home</span>
-            <a href="#">Dashboard</a>
-          </li>
-          <li>
-            <span class="material-symbols-rounded">queue_music</span>
-            <a href="#">Revenue</a>
-          </li>
-          <li>
-            <span class="material-symbols-rounded">explore</span>
-            <a href="#">Reports</a>
-          </li>
 
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid main">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="img/logo.jpg" alt="logo">
+      </div>
+      <ul class="links">
+        <h4>Main Menu</h4>
+        <li class="active">
+          <span class="material-symbols-rounded">home</span>
+          <a href="#">Dashboard</a>
+        </li>
+        <li>
+          <span class="material-symbols-rounded">queue_music</span>
+          <a href="#">Revenue</a>
+        </li>
+        <li>
+          <span class="material-symbols-rounded">explore</span>
+          <a href="#">Reports</a>
+        </li>
+
+        <li>
+          <span class="material-symbols-rounded">podcasts</span>
+          <a href="#">Message</a>
+        </li>
+        <li>
+          <span class="material-symbols-rounded">settings</span>
+          <a href="#">Settings</a>
+        </li>
+        <li class="logout-link">
+          <span class="material-symbols-rounded">logout</span>
+          <a href="#">Logout</a>
+        </li>
+      </ul><div id="player" style="margin: 0; padding: 0; visibility: hidden; height: 0; width: 0;"></div>
+    </aside>
+
+    <div class="row rrr">
+
+      <div class="row" style="margin: 0; padding: 0;height: 60px;">
+        <div class="col-8 topbar1">
+          <img src="img/logo.jpg" class="dp" alt="logo">
+          <p class="displayname">Good Morning, Siddant Mahajan</p>
+        </div>
+
+        <div class="col-4 topbar2">
+          <input type="text" placeholder="Search" class="searchbar" id="searchbar">
+          <button class="searchbtn" onclick="search()"><span class="material-symbols-rounded">search</span></button>
+        </div>
+      </div>
+
+      <div class="row mainarea">
+        <ul class="col-12 mainarea1">
           <li>
-            <span class="material-symbols-rounded">podcasts</span>
-            <a href="#">Message</a>
+            <p class="plTitle">Siddant</p>
+            <p>Mahajan</p>
           </li>
-          <li>
-            <span class="material-symbols-rounded">settings</span>
-            <a href="#">Settings</a>
-          </li>
-          <li class="logout-link">
-            <span class="material-symbols-rounded">logout</span>
-            <a href="#">Logout</a>
-          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
-      </aside>
+        <div class="col-9 mainarea2">
+          <div class="container-fluid list">
+            <div class="row songlist">
+              <ul class="col-2 playlistList">
+                <a href="#playlistitem1">
+                  <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                </a>
+                <a href="#playlistitem2">
+                  <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                </a>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+                <li><span class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
+              </ul>
 
-      <div class="row rrr">
+              <div class="col-10" style="overflow-y: hidden;height: 100%; margin: 0;padding: 0;">
+                <ul class="playlistitem" id="playlistitem1">
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laal Pari (Full
+                        Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
+                        Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
 
-        <div class="row" style="margin: 0; padding: 0;height: 60px;">
-          <div class="col-8 topbar1">
-            <img src="img/logo.jpg" class="dp" alt="logo">
-            <p class="displayname">Good Morning, Siddant Mahajan</p>
-          </div>
-
-          <div class="col-4 topbar2">
-            <input type="text" placeholder="Search" class="searchbar">
-            <button class="searchbtn"><span
-                class="material-symbols-rounded">search</span></button>
-          </div>
-        </div>
-
-        <div class="row mainarea">
-          <ul class="col-12 mainarea1">
-            <li>
-              <p class="plTitle">Siddant</p>
-              <p>Mahajan</p>
-            </li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <div class="col-9 mainarea2">
-            <div class="container-fluid list">
-              <div class="row songlist">
-                <ul class="col-2 playlistList">
-                  <a href="#playlistitem1"><li><span
-                        class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li></a>
-                  <a href="#playlistitem2"><li><span
-                        class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li></a>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
-                  <li><span
-                      class="material-symbols-rounded">queue_music</span>&nbsp;&nbsp;SDM1</li>
                 </ul>
 
-                <div class="col-10"
-                  style="overflow-y: hidden;height: 100%; margin: 0;padding: 0;">
-                  <ul class="playlistitem" id="playlistitem1">
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laal Pari (Full
-                          Video) | Yo Yo Honey Singh | Sajid Nadiadwala | Tarun
-                          Mansukhani | Sajid Nadiadwala | Yo Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
+                <ul class="playlistitem" id="playlistitem2">
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefusadadll 5: Laal Pari
+                        (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
+                        Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
+                        ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">fting REAL Assassins Creed
+                        Hidden Blades (Damascus Titanium)</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefullasdsad 5: Laal Pari
+                        (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
+                        Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
+                        ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull asdsadas: Laal
+                        Pari (Full Video) | Yo Yo Honey Singh | Sajid
+                        Nadiadwala | Tarun Mansukhani | Sajid Nadiadwala | Yo
+                        Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: asdasdLaal Pari
+                        (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
+                        Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
+                        ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Lasdsadasaal
+                        Pari (Full Video) | Yo Yo Honey Singh | Sajid
+                        Nadiadwala | Tarun Mansukhani | Sajid Nadiadwala | Yo
+                        Yo ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Lasdasdaal Pari
+                        (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
+                        Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
+                        ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5: Laasdsadal Pari
+                        (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
+                        Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
+                        ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/logo.jpg" class="aart" alt="logo">
+                    <div class="con">
+                      <p class="title" id="title">Housefull 5asdsa: Laal Pari
+                        (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
+                        Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
+                        ssafdasda</p>
+                      <p class="artist1">T-Series</p>
+                    </div>
+                  </li>
 
-                  </ul>
-
-                  <ul class="playlistitem" id="playlistitem2">
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefusadadll 5: Laal Pari
-                          (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
-                          Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
-                          ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">fting REAL Assassins Creed
-                          Hidden Blades (Damascus Titanium)</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefullasdsad 5: Laal Pari
-                          (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
-                          Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
-                          ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull asdsadas: Laal
-                          Pari (Full Video) | Yo Yo Honey Singh | Sajid
-                          Nadiadwala | Tarun Mansukhani | Sajid Nadiadwala | Yo
-                          Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: asdasdLaal Pari
-                          (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
-                          Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
-                          ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Lasdsadasaal
-                          Pari (Full Video) | Yo Yo Honey Singh | Sajid
-                          Nadiadwala | Tarun Mansukhani | Sajid Nadiadwala | Yo
-                          Yo ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Lasdasdaal Pari
-                          (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
-                          Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
-                          ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5: Laasdsadal Pari
-                          (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
-                          Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
-                          ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-                    <li>
-                      <img src="img/logo.jpg" class="aart" alt="logo">
-                      <div class="con">
-                        <p class="title" id="title">Housefull 5asdsa: Laal Pari
-                          (Full Video) | Yo Yo Honey Singh | Sajid Nadiadwala |
-                          Tarun Mansukhani | Sajid Nadiadwala | Yo Yo
-                          ssafdasda</p>
-                        <p class="artist1">T-Series</p>
-                      </div>
-                    </li>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-3 mainarea3">
-            <div class="container-fluid player">
-              <div class="container-fluid" style="margin: 0; padding: 0; height: calc(100% - 50px); overflow: hidden;">
-                <div class="container-fluid player-inner" id="playerX1">
-                  <img src="img/test.jpg" class="albumart">
-                  <p class="song">Song title here</p>
-                  <p class="artist">Artist title here</p>
-                  <input type="range" min="0" max="100" value="50"
-                    class="seekslider" />
-                  <div class="container-fluid time">
-                    <p class="start">00:00</p>
-                    <p class="end">00:00</p>
-                  </div>
-                  <div class="container-fluid controls">
-                    <button class="prev"><span class="material-symbols-rounded"
-                        style="font-size: 30px;">skip_previous</span></button>
-                    <button class="play" id="play" onclick="play()"><span
-                        class="material-symbols-rounded"
-                        style="font-size: 30px;">play_arrow</span></button>
-                    <button class="next"><span class="material-symbols-rounded"
-                        style="font-size: 30px;">skip_next</span></button>
-                  </div>
-                </div>
-
-                <div class="container-fluid player-inner" id="queueX1">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/rcPuG_PkAf8?si=1BkgweSTcRcA_Qsy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-
-                <div class="container-fluid player-inner" id="lyricsX1" >
-                  Lyrics
-                </div>
-              </div>
-              <div class="container-fluid btm-layer">
-                <ul class="btm-layer1">
-                  <li><button id="playerX" class="active">Player</button></li>
-                  <li><button id="queueX">Queue</button></li>
-                  <li><button id="lyricsX">Lyrics</button></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+        <div class="col-3 mainarea3">
+          <div class="container-fluid player">
+            <div class="container-fluid" style="margin: 0; padding: 0; height: calc(100% - 50px); overflow: hidden;">
+              <div class="container-fluid player-inner" id="playerX1">
+                <img src="img/test.jpg" class="albumart" id="albumart">
+                <p class="song" id="song">Song title here</p>
+                <p class="artist" id="artist">Artist title here</p>
+                <input type="range" min="0" max="100" value="50" class="seekslider" id="seek-bar" onchange="seekTo(this.value)"/>
+                <div class="container-fluid time">
+                  <p class="start" id="start">00:00</p>
+                  <p class="end" id="end">00:00</p>
+                </div>
+                <div class="container-fluid controls">
+                  <button class="prev"><span class="material-symbols-rounded"
+                      style="font-size: 30px;">skip_previous</span></button>
+                  <button class="play" id="play"><span class="material-symbols-rounded"
+                      style="font-size: 30px;">play_arrow</span></button>
+                  <button class="next"><span class="material-symbols-rounded"
+                      style="font-size: 30px;">skip_next</span></button>
+                </div>
 
+              </div>
+
+              <div class="container-fluid player-inner" id="queueX1">
+                <button id="test">Hit</button>
+              </div>
+
+              <div class="container-fluid player-inner" id="lyricsX1">
+                Lyrics
+              </div>
+            </div>
+            <div class="container-fluid btm-layer">
+              <ul class="btm-layer1">
+                <li><button id="playerX" class="active">Player</button></li>
+                <li><button id="queueX">Queue</button></li>
+                <li><button id="lyricsX">Lyrics</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-  </body>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script>
+    var player;
+    var duration;
+    var playPauseButton;
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    function search() {
+      var x = document.getElementById('searchbar').value;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '0',
+          width: '0',
+          videoId: `${x}`,
+          playerVars: {
+            'autoplay': 1, 'controls': 0, 'enablejsapi': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      onYouTubeIframeAPIReady();
+      const pauseButton = document.getElementById('play');
+      pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
+
+    }
+
+    function seekTo(value) {
+      const duration = player.getDuration();
+      const seekTime = (value / 100) * duration;
+      player.seekTo(seekTime, true);
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      setInterval(updateSeekSlider, 500);  // Update the seek slider every 500ms
+      event.target.playVideo();
+      playPauseButton = document.getElementById('play');
+      playPauseButton.addEventListener('click', function () {
+        if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+          player.pauseVideo();
+        } else {
+          player.playVideo();
+        }
+      });
+      var videoTitle = player.getVideoData().title;
+      const songTitle = document.getElementById('song');
+      if(videoTitle === null || videoTitle === '')
+      {
+        song.innerHTML = "null";
+      }
+      else{
+        if(videoTitle.length > 33){
+          videoTitle = videoTitle.substring(0,30) + '..';
+        }
+        
+        song.innerHTML = videoTitle;
+      }
+      
+      console.log(player.getVideoData());
+      var author = player.getVideoData().author;
+      const chann = document.getElementById('artist');
+      if(author === null || author === '')
+      {
+        chann.innerHTML = 'null';
+      }
+      else{
+        chann.innerHTML = author;
+      }
+
+      const aart = document.getElementById('albumart');
+      aart.src=`https://img.youtube.com/vi/${ player.getVideoData().video_id}/sddefault.jpg`;
+
+    }
+
+    var done = false;
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING && !done) {
+        done = true;
+      }
+      if (event.data === YT.PlayerState.PLAYING) {
+        updateSeekSlider();
+      }
+
+      const pauseButton = document.getElementById('play');
+      pauseButton.addEventListener('click', () => {
+        if (event.data === YT.PlayerState.PLAYING) {
+          player.pauseVideo();
+          pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">play_arrow</span>';
+        }
+        else if (event.data === YT.PlayerState.PAUSED) {
+          player.playVideo();
+          pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
+        }
+      });
+
+    }
+
+
+    // Update the seek slider with the current time and total duration
+    function updateSeekSlider() {
+      const currentTime = player.getCurrentTime();
+      const duration = player.getDuration();
+      const percent = (currentTime / duration) * 100;
+      document.getElementById('seek-bar').value = percent;
+
+      const currentMinutes = Math.floor(currentTime / 60);
+      const currentSeconds = Math.floor(currentTime % 60);
+      const durationMinutes = Math.floor(duration / 60);
+      const durationSeconds = Math.floor(duration % 60);
+
+      // Display time in MM:SS format
+      document.getElementById('start').textContent = `${currentMinutes}:${currentSeconds.toString().padStart(2, '0')}`;
+      document.getElementById('end').textContent = `${durationMinutes}:${durationSeconds.toString().padStart(2, '0')}`;
+    }
+
+
+    function stopVideo() {
+      player.stopVideo();
+    }
+  </script>
+</body>
+
 </html>
