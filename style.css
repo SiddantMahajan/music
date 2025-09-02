@@ -265,22 +265,6 @@ body {
     display: inline-block;
     margin-right: 20px;
     width: calc(100%/5);
-    background: url('img/logo.jpg');
-    background-position: center;
-    background-size: cover;
-    position: relative; /* required for overlay */
-}
-
-.mainarea1 li::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* dim effect */
-  opacity: 1;
-  border: none;
-  transition: opacity 0.3s ease;
-  border-radius: 40px;
-  z-index: 2;
 }
 
 .mainarea1 li:last-child{
@@ -641,4 +625,5 @@ a{
   width: 0;
   box-shadow: -20rem 0 0 20rem rgba(255, 255, 255, 0.2);
 }
+
 
