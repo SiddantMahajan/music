@@ -302,7 +302,7 @@
                   <button class="next"><span class="material-symbols-rounded"
                       style="font-size: 30px;">skip_next</span></button>
                 </div>
-
+                <input onchange="changeVolume(this.value)" id="volSlider" type="range" value="100" min="0" class="volume" />
               </div>
 
               <div class="container-fluid player-inner" id="queueX1">
@@ -462,9 +462,14 @@
     function stopVideo() {
       player.stopVideo();
     }
+
+    function changeVolume(vol){
+        player.setVolume(volume);
+    }
   </script>
 </body>
 
 </html>
+
 
 
