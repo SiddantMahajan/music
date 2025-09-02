@@ -385,6 +385,31 @@
           player.playVideo();
         }
       });
+      
+
+    }
+
+    var done = false;
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING && !done) {
+        done = true;
+      }
+      if (event.data === YT.PlayerState.PLAYING) {
+        updateSeekSlider();
+      }
+
+      const pauseButton = document.getElementById('play');
+      pauseButton.addEventListener('click', () => {
+        if (event.data === YT.PlayerState.PLAYING) {
+          player.pauseVideo();
+          pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">play_arrow</span>';
+        }
+        else if (event.data === YT.PlayerState.PAUSED) {
+          player.playVideo();
+          pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
+        }
+      });
+
       var videoTitle = player.getVideoData().title;
       const songTitle = document.getElementById('song');
       if(videoTitle === null || videoTitle === '')
@@ -415,29 +440,6 @@
 
     }
 
-    var done = false;
-    function onPlayerStateChange(event) {
-      if (event.data == YT.PlayerState.PLAYING && !done) {
-        done = true;
-      }
-      if (event.data === YT.PlayerState.PLAYING) {
-        updateSeekSlider();
-      }
-
-      const pauseButton = document.getElementById('play');
-      pauseButton.addEventListener('click', () => {
-        if (event.data === YT.PlayerState.PLAYING) {
-          player.pauseVideo();
-          pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">play_arrow</span>';
-        }
-        else if (event.data === YT.PlayerState.PAUSED) {
-          player.playVideo();
-          pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
-        }
-      });
-
-    }
-
 
     // Update the seek slider with the current time and total duration
     function updateSeekSlider() {
@@ -464,4 +466,5 @@
 </body>
 
 </html>
+
 
