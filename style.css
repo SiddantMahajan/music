@@ -346,6 +346,8 @@ body {
 .albumart {
     width: 100%;
     border-radius: 20px;
+    aspect-ratio:16/9;
+    object-fit:cover;
 }
 
 .song {
@@ -612,4 +614,5 @@ a{
 .active{
     background-color: #253037;
     color: #fff;
+
 }
