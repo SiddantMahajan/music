@@ -263,6 +263,7 @@ body {
     color: rgba(255, 255, 255, 0.8);
     border-radius: 40px;
     display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin-right: 20px;
     width: calc(100%/5);
 }
@@ -625,5 +626,6 @@ a{
   width: 0;
   box-shadow: -20rem 0 0 20rem rgba(255, 255, 255, 0.2);
 }
+
 
 
