@@ -303,22 +303,29 @@
       
     }
 // Run this on page load
+// Run this on page load
 window.onload = function () {
-  const accessToken = getAccessTokenFromUrl();
-  if (accessToken) {
-    console.log("Access token received:", accessToken);
-    localStorage.setItem("accessToken", accessToken);
+  // 1. Check if redirect gave us a new token
+  const tokenFromUrl = getAccessTokenFromUrl();
+  if (tokenFromUrl) {
+    console.log("Access token received:", tokenFromUrl);
+    localStorage.setItem("accessToken", tokenFromUrl);
 
     // Clean URL so the token hash isn’t visible
     window.history.replaceState({}, document.title, window.location.pathname);
   }
-  const accessToken = localStorage.getItem("accessToken");
-  if (!accessToken) {
+
+  // 2. Use token from storage (whether freshly saved or already there)
+  const storedToken = localStorage.getItem("accessToken");
+  if (!storedToken) {
     alert("Please login first!");
     return;
   }
+
+  // 3. Fetch user info automatically on page load
   getUserInfo();
 };
+
 
 
 function getAccessTokenFromUrl() {
@@ -358,6 +365,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
