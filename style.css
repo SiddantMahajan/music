@@ -516,10 +516,19 @@ a{
     height: 75px;
     padding-left: 13px;
     display: flex;
-    align-items: center;
     padding: 10px; 
     transition: 0.25s ease-in-out;
+    margin: 0;
 }
+
+ .playlistitem .sdm{
+    background: transparent;
+    outline: none;
+    border: none;
+    margin: 0;
+    color: #fff;
+    width: 100%;
+ }
 
 .title{
     padding: 0;
@@ -626,6 +635,7 @@ a{
   width: 0;
   box-shadow: -20rem 0 0 20rem rgba(255, 255, 255, 0.2);
 }
+
 
 
 
