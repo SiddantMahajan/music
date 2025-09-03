@@ -24,9 +24,8 @@
         <li id="login">
           <span class="material-symbols-rounded">passkey</span>
         </li>
-        <li>
+        <li id="pop">
           <span class="material-symbols-rounded">explore</span>
-          <a href="#">Reports</a>
         </li>
 
         <li>
@@ -301,14 +300,20 @@
       const responseType = 'token';
       const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
       window.location.href = url;
-      const accessToken = getAccessTokenFromUrl();
+      
+    }
+
+var pop = document.getElementById('pop');
+      pop.addEventListener('click', function () {
+        const accessToken = getAccessTokenFromUrl();
       if (accessToken) {
         console.log('Access Token:', accessToken);
         localStorage.setItem('accessToken', accessToken);
       }
       getUserInfo();
-    }
+      });
 
+    
     function getUserInfo() {
       console.log('getUserInfo called'):
       const accessToken = localStorage.getItem('accessToken');
@@ -339,6 +344,7 @@
 </body>
 
 </html>
+
 
 
 
