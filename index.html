@@ -376,8 +376,14 @@ function getUserInfo() {
 
 
   function playSong(id) {
+
+    document.querySelectorAll(".playlistitem1 li.active1").forEach(li => {
+  li.classList.remove("active1");
+});
       player.loadVideoById(id, 0, 'large');
       player.playVideo();
+    let element = document.getElementById(id); 
+    element.classList.add('active1'); 
       const pauseButton = document.getElementById('play');
       pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
     }
@@ -391,7 +397,7 @@ function getUserInfo() {
         const thumbnailUrl = item.snippet.thumbnails.medium.url;
         const description = item.snippet.description;
         var channelTitle = item.snippet.channelTitle;    
-        var constructedDiv = `<button class="sdm" onclick="playSong('${videoId}')"><li><img src="${thumbnailUrl}" class="aart" alt="logo"><div class="con"><p class="title" id="title">${title}</p><p class="artist1">${channelTitle}</p></div></li></button>`;
+        var constructedDiv = `<button class="sdm" onclick="playSong('${videoId}')"><li id="${videoId}"><img src="${thumbnailUrl}" class="aart" alt="logo"><div class="con"><p class="title" id="title">${title}</p><p class="artist1">${channelTitle}</p></div></li></button>`;
         playlistitem1.innerHTML += constructedDiv;
       });
     }
@@ -399,6 +405,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
