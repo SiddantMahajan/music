@@ -385,20 +385,21 @@ function getUserInfo() {
     function renderSearchResults(videoList){
       var playlistitem1 =  document.getElementById('playlistitem1');
       playlistitem1.innerHTML = '';
-      videos.forEach((item, index) => {
+      videoList.forEach((item, index) => {
         const videoId = item.id.videoId;
         var title = item.snippet.title;
         const thumbnailUrl = item.snippet.thumbnails.medium.url;
         const description = item.snippet.description;
         var channelTitle = item.snippet.channelTitle;    
         var constructedDiv = `<li><img src="${thumbnailUrl}" class="aart" alt="logo"><div class="con"><p class="title" id="title">${title}</p><p class="artist1">${channelTitle}</p></div></li>`;
-        playlistitem1.innerHTML += videoHTML;
+        playlistitem1.innerHTML += constructedDiv;
       });
     }
   </script>
 </body>
 
 </html>
+
 
 
 
