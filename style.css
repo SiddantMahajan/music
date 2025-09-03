@@ -750,34 +750,28 @@ a{
   animation-direction: alternate;
   border-radius:40px;
 }
-
 .red {
   background-color: #fff;
-  box-shadow: 1px 1px 10px #fff;
   animation-delay: 0.10s;
 }
 
 .orange {
   background-color: #fff;
-  box-shadow: 1px 1px 10px #fff;
   animation-delay: 0.20s;
 }
 
 .yellow {
   background-color: #fff;
-  box-shadow: 1px 1px 10px #fff;
   animation-delay: 0.25s;
 }
 
 .green {
   background-color: #fff;
-  box-shadow: 1px 1px 10px #fff;
   animation-delay: 0.30s;
 }
 
 .blue {
   background-color: #fff;
-  box-shadow: 1px 1px 10px #fff;
   animation-delay: 0.35s;
 }
 
@@ -791,5 +785,6 @@ a{
   }
 }
 
-
-
+.playlistitem li:hover .blue ,  .playlistitem li:hover .green ,  .playlistitem li:hover .yellow ,  .playlistitem li:hover .orange ,  .playlistitem li:hover .red  {
+    background-color: #253037;
+}
