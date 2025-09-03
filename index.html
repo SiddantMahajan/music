@@ -153,16 +153,7 @@
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // function search() {
-    //   var x = document.getElementById('searchbar').value;
-    //   player.loadVideoById(x, 0, 'large');
-    //   player.playVideo();  // Start playing immediately
-    //   const pauseButton = document.getElementById('play');
-    //   pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
-
-    // }
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
@@ -382,6 +373,15 @@ function getUserInfo() {
     });
     }
 
+
+  function playSong(id) {
+      player.loadVideoById(id, 0, 'large');
+      player.playVideo();
+      const pauseButton = document.getElementById('play');
+      pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
+
+    }
+    
     function renderSearchResults(videoList){
       var playlistitem1 =  document.getElementById('playlistitem1');
       playlistitem1.innerHTML = '';
@@ -391,7 +391,7 @@ function getUserInfo() {
         const thumbnailUrl = item.snippet.thumbnails.medium.url;
         const description = item.snippet.description;
         var channelTitle = item.snippet.channelTitle;    
-        var constructedDiv = `<li><img src="${thumbnailUrl}" class="aart" alt="logo"><div class="con"><p class="title" id="title">${title}</p><p class="artist1">${channelTitle}</p></div></li>`;
+        var constructedDiv = `<button class="sdm" onclick="playSong(${videoId})"><li><img src="${thumbnailUrl}" class="aart" alt="logo"><div class="con"><p class="title" id="title">${title}</p><p class="artist1">${channelTitle}</p></div></li></button>`;
         playlistitem1.innerHTML += constructedDiv;
       });
     }
@@ -399,6 +399,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
