@@ -374,6 +374,7 @@ function getUserInfo() {
         playlistitem1.innerHTML = 'Invalid query';
         return;
       }
+      renderSearchResults(data.items);
       console.log(data);
     })
     .catch((error) => {
@@ -398,6 +399,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
