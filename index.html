@@ -289,12 +289,12 @@
   </script>
 
   <script>
-
     var login = document.getElementById('login');
       login.addEventListener('click', function () {
         Authenticate();
       });
     function Authenticate() {
+      console.log('Authenticate called'):
       const clientId = '751698155813-qts0dtps5okkv5d7bbvo4v9j33udra9q.apps.googleusercontent.com';
       const redirectUri = 'https://siddantmahajan.github.io/music/';
       const scope = 'https://www.googleapis.com/auth/youtube.force-ssl';
@@ -310,6 +310,7 @@
     }
 
     function getUserInfo() {
+      console.log('getUserInfo called'):
       const accessToken = localStorage.getItem('accessToken');
       fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {
         headers: {
@@ -330,6 +331,7 @@
     }
 
     function getAccessTokenFromUrl() {
+      console.log('getAccessTokenFromUrl called'):
       const urlParams = new URLSearchParams(window.location.hash.substring(1));
       return urlParams.get('access_token');
     }
@@ -337,6 +339,7 @@
 </body>
 
 </html>
+
 
 
 
