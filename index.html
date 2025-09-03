@@ -371,7 +371,7 @@ function getUserInfo() {
       var query = document.getElementById('searchbar').value;
       fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)} official music video&type=video&videoCategoryId=10&maxResults=10`, {
     headers: {
-      Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken1}`,
     },
   })
     .then((response) => response.json())
@@ -390,6 +390,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
