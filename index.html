@@ -302,48 +302,66 @@
       window.location.href = url;
       
     }
+// Run this on page load
+window.onload = function () {
+  const accessToken = getAccessTokenFromUrl();
+  if (accessToken) {
+    console.log("Access token received:", accessToken);
+    localStorage.setItem("accessToken", accessToken);
 
-var pop = document.getElementById('pop');
-      pop.addEventListener('click', function () {
-        const accessToken = getAccessTokenFromUrl();
-      if (accessToken) {
-        console.log('Access Token:', accessToken);
-        localStorage.setItem('accessToken', accessToken);
+    // Clean URL so the token hash isn’t visible
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+};
+
+var pop = document.getElementById("pop");
+pop.addEventListener("click", function () {
+  const accessToken = localStorage.getItem("accessToken");
+  if (!accessToken) {
+    alert("Please login first!");
+    return;
+  }
+  getUserInfo();
+});
+
+function getAccessTokenFromUrl() {
+  console.log("getAccessTokenFromUrl called");
+  const urlParams = new URLSearchParams(window.location.hash.substring(1));
+  return urlParams.get("access_token");
+}
+
+function getUserInfo() {
+  console.log("getUserInfo called");
+  const accessToken = localStorage.getItem("accessToken");
+  if (!accessToken) {
+    console.error("No access token found");
+    return;
+  }
+
+  fetch("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true", {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (!data.items || !data.items.length) {
+        console.error("No channel found or invalid token");
+        return;
       }
-      getUserInfo();
-      });
-
-    
-    function getUserInfo() {
-      console.log('getUserInfo called');
-      const accessToken = localStorage.getItem('accessToken');
-      fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`
-        }
-      })
-        .then(response => response.json())
-        .then(data => {
-          const channel = data.items[0]; // Assuming the user only has one channel
-          const channelTitle = channel.snippet.title;
-          const channelThumbnailUrl = channel.snippet.thumbnails.default.url;
-          document.getElementById('displayname').innerHTML = `Good Morning ${channelTitle}`;
-          document.getElementById('dp').src = channelThumbnailUrl;
-        })
-        .catch(error => {
-          console.error('Error fetching user info:', error);
-        });
-    }
-
-    function getAccessTokenFromUrl() {
-      console.log('getAccessTokenFromUrl called');
-      const urlParams = new URLSearchParams(window.location.hash.substring(1));
-      return urlParams.get('access_token');
-    }
+      const channel = data.items[0];
+      document.getElementById("displayname").innerHTML = `Good Morning ${channel.snippet.title}`;
+      document.getElementById("dp").src = channel.snippet.thumbnails.default.url;
+    })
+    .catch((error) => {
+      console.error("Error fetching user info:", error);
+    });
+}
   </script>
 </body>
 
 </html>
+
 
 
 
