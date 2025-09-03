@@ -784,7 +784,7 @@ a{
     height: 40px;
   }
 }
-
 .playlistitem li:hover .blue ,  .playlistitem li:hover .green ,  .playlistitem li:hover .yellow ,  .playlistitem li:hover .orange ,  .playlistitem li:hover .red  {
     background-color: #253037;
 }
+
