@@ -391,7 +391,7 @@ function getUserInfo() {
         const thumbnailUrl = item.snippet.thumbnails.medium.url;
         const description = item.snippet.description;
         var channelTitle = item.snippet.channelTitle;    
-        var constructedDiv = `<button class="sdm" onclick="playSong(${videoId})"><li><img src="${thumbnailUrl}" class="aart" alt="logo"><div class="con"><p class="title" id="title">${title}</p><p class="artist1">${channelTitle}</p></div></li></button>`;
+        var constructedDiv = `<button class="sdm" onclick="playSong('${videoId}')"><li><img src="${thumbnailUrl}" class="aart" alt="logo"><div class="con"><p class="title" id="title">${title}</p><p class="artist1">${channelTitle}</p></div></li></button>`;
         playlistitem1.innerHTML += constructedDiv;
       });
     }
@@ -399,6 +399,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
