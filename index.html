@@ -350,9 +350,10 @@ function getUserInfo() {
     
   <script>
     function search() {
-      const accessToken1 = localStorage.getItem("accessToken");
       var playlistitem1 =  document.getElementById('playlistitem1');
       playlistitem1.innerHTML = '';
+      playlistitem1.innerHTML = '<div class="loader" id="loader"><svg viewBox="0 0 16 16" height="48" width="48" class="windows-loading-spinner"><circle r="7px" cy="8px" cx="8px"></circle></svg></div>';
+      const accessToken1 = localStorage.getItem("accessToken");
       var query = document.getElementById('searchbar').value;
       fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)} official music video&type=video&videoCategoryId=10&maxResults=10`, {
     headers: {
@@ -379,7 +380,6 @@ function getUserInfo() {
       player.playVideo();
       const pauseButton = document.getElementById('play');
       pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
-
     }
     
     function renderSearchResults(videoList){
@@ -399,6 +399,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
