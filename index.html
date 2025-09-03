@@ -377,7 +377,7 @@ function getUserInfo() {
 
   function playSong(id) {
 
-    document.querySelectorAll(".playlistitem1 active1").forEach(li => {
+    document.querySelectorAll(".playlistitem1 .active1").forEach(li => {
   li.classList.remove("active1");
 });
       player.loadVideoById(id, 0, 'large');
@@ -405,6 +405,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
