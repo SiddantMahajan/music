@@ -380,7 +380,7 @@ function getUserInfo() {
     document.querySelectorAll("li.active1").forEach(li => {
   li.classList.remove("active1");
       var temp = li.innerHTML;
-      li.innerHTML = temp.replace("<div class="loader1"><div class="red bar"></div><div class="orange bar"></div><div class="yellow bar"></div><div class="green bar"></div><div class="blue bar"></div></div>" , "");
+      li.innerHTML = temp.replace('<div class="loader1"><div class="red bar"></div><div class="orange bar"></div><div class="yellow bar"></div><div class="green bar"></div><div class="blue bar"></div></div>' , '');
 });
       player.loadVideoById(id, 0, 'large');
       player.playVideo();
@@ -408,6 +408,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
