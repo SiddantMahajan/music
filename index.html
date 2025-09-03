@@ -48,8 +48,8 @@
 
       <div class="row" style="margin: 0; padding: 0;height: 60px;">
         <div class="col-8 topbar1">
-          <img src="img/logo.jpg" class="dp" alt="logo">
-          <p class="displayname">Good Morning, Siddant Mahajan</p>
+          <img src="img/logo.jpg" class="dp" alt="logo" id="dp">
+          <p class="displayname" id="displayname">---- -------, ------- -------</p>
         </div>
 
         <div class="col-4 topbar2">
@@ -321,7 +321,8 @@
           const channel = data.items[0]; // Assuming the user only has one channel
           const channelTitle = channel.snippet.title;
           const channelThumbnailUrl = channel.snippet.thumbnails.default.url;
-          console.log(channelTitle + channelThumbnailUrl);
+          document.getElementById('displayname').innerHTML = `Good Morning ${channelTitle}`;
+          document.getElementById('dp').src = channelThumbnailUrl;
         })
         .catch(error => {
           console.error('Error fetching user info:', error);
@@ -336,6 +337,7 @@
 </body>
 
 </html>
+
 
 
 
