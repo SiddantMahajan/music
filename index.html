@@ -384,6 +384,7 @@ function getUserInfo() {
       player.playVideo();
     let element = document.getElementById(id); 
     element.classList.add('active1'); 
+    element.append('<div class="loader1"><div class="red bar"></div><div class="orange bar"></div><div class="yellow bar"></div><div class="green bar"></div><div class="blue bar"></div></div>');
       const pauseButton = document.getElementById('play');
       pauseButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 30px;">pause</span>';
     }
@@ -405,6 +406,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
