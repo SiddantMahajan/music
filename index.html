@@ -21,9 +21,8 @@
           <span class="material-symbols-rounded">home</span>
           <a href="#">Dashboard</a>
         </li>
-        <li>
-          <span class="material-symbols-rounded">queue_music</span>
-          <a href="#">Revenue</a>
+        <li id="login">
+          <span class="material-symbols-rounded">passkey</span>
         </li>
         <li>
           <span class="material-symbols-rounded">explore</span>
@@ -288,9 +287,56 @@
         player.setVolume(vol);
     }
   </script>
+
+  <script>
+
+    var login = document.getElementById('login');
+      login.addEventListener('click', function () {
+        Authenticate();
+      });
+    function Authenticate() {
+      const clientId = '751698155813-qts0dtps5okkv5d7bbvo4v9j33udra9q.apps.googleusercontent.com';
+      const redirectUri = 'https://siddantmahajan.github.io/music/';
+      const scope = 'https://www.googleapis.com/auth/youtube.force-ssl';
+      const responseType = 'token';
+      const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
+      window.location.href = url;
+      const accessToken = getAccessTokenFromUrl();
+      if (accessToken) {
+        console.log('Access Token:', accessToken);
+        localStorage.setItem('accessToken', accessToken);
+      }
+      getUserInfo();
+    }
+
+    function getUserInfo() {
+      const accessToken = localStorage.getItem('accessToken');
+      fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          const channel = data.items[0]; // Assuming the user only has one channel
+          const channelTitle = channel.snippet.title;
+          const channelThumbnailUrl = channel.snippet.thumbnails.default.url;
+          console.log(channelTitle + channelThumbnailUrl);
+        })
+        .catch(error => {
+          console.error('Error fetching user info:', error);
+        });
+    }
+
+    function getAccessTokenFromUrl() {
+      const urlParams = new URLSearchParams(window.location.hash.substring(1));
+      return urlParams.get('access_token');
+    }
+  </script>
 </body>
 
 </html>
+
 
 
 
