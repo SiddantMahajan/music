@@ -554,6 +554,7 @@ a{
     aspect-ratio: 1/1;
     margin-right: 20px;
     border-radius: 20px;
+    object-fit: cover;
 }
 .con{
     height: 100%;
@@ -636,6 +637,7 @@ a{
   width: 0;
   box-shadow: -20rem 0 0 20rem rgba(255, 255, 255, 0.2);
 }
+
 
 
 
