@@ -312,17 +312,14 @@ window.onload = function () {
     // Clean URL so the token hash isn’t visible
     window.history.replaceState({}, document.title, window.location.pathname);
   }
-};
-
-var pop = document.getElementById("pop");
-pop.addEventListener("click", function () {
   const accessToken = localStorage.getItem("accessToken");
   if (!accessToken) {
     alert("Please login first!");
     return;
   }
   getUserInfo();
-});
+};
+
 
 function getAccessTokenFromUrl() {
   console.log("getAccessTokenFromUrl called");
@@ -361,6 +358,7 @@ function getUserInfo() {
 </body>
 
 </html>
+
 
 
 
