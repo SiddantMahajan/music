@@ -739,6 +739,7 @@ a{
     display: flex;
     align-items: flex-end;
     gap: 8px;
+    margin-right: 10px;
 }
 
 .bar {
@@ -787,5 +788,6 @@ a{
 .playlistitem li:hover .blue ,  .playlistitem li:hover .green ,  .playlistitem li:hover .yellow ,  .playlistitem li:hover .orange ,  .playlistitem li:hover .red  {
     background-color: #253037;
 }
+
 
 
