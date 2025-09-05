@@ -512,13 +512,15 @@ a{
 
 .playlistitem li{
     list-style: none;
+    justify-content: space-between;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     height: 75px;
     padding-left: 13px;
     display: flex;
-    padding: 10px; 
+    padding: 10px;
     transition: 0.25s ease-in-out;
     margin: 0;
+    text-align: left;
 }
 
  .playlistitem .sdm{
@@ -560,7 +562,9 @@ a{
     height: 100%;
     padding: 0;
     padding-top: 3px;
+    flex: 1;
     margin: 0;
+    margin-left: 10px;
 }
 
 
@@ -732,13 +736,9 @@ a{
 
 /* From Uiverse.io by Gianluks90 */ 
 .loader1 {
-    height: 50px;
     display: flex;
     align-items: flex-end;
     gap: 8px;
-    float: right;
-    position: absolute;
-    right: 20px;
 }
 
 .bar {
@@ -787,4 +787,5 @@ a{
 .playlistitem li:hover .blue ,  .playlistitem li:hover .green ,  .playlistitem li:hover .yellow ,  .playlistitem li:hover .orange ,  .playlistitem li:hover .red  {
     background-color: #253037;
 }
+
 
