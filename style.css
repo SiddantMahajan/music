@@ -75,8 +75,6 @@ body {
     display: none;
 }
 
-
-
 .sidebar .links {
     list-style: none;
     margin-top: 20px;
@@ -788,6 +786,7 @@ a{
 .playlistitem li:hover .blue ,  .playlistitem li:hover .green ,  .playlistitem li:hover .yellow ,  .playlistitem li:hover .orange ,  .playlistitem li:hover .red  {
     background-color: #253037;
 }
+
 
 
 
